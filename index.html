@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Планування розумного будинку</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div id="control-panel">
+		<h2>Дані розумного будинку</h2>
+		<div class="info">
+			<p>Температура: <span id="temp-value">-- °C</span></p>
+			<p>Енергоспоживання: <span id="energy-value">-- КВт</span></p>
+			<p>Інтенсивність світла: <span id="light-value">-- %</span></p>
+		</div>
+		<div class="controls">
+			<button id="toggle-all">Вимкнути все</button>
+		</div>
+	</div>
+	<div id="house-block">
+		<h1>Панель керування розумним будинком</h1>
+		<div id="house-map"></div>
+	</div>
+
+	<script src="controller/SmartHouseController.js"></script>
+	<script src="core/Device.js"></script>
+	<script src="core/Lamp.js"></script>
+	<script src="core/AC.js"></script>
+	<script src="core/Blinds.js"></script>
+	<script src="core/Fridge.js"></script>
+	<script src="core/Robovac.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
