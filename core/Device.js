@@ -9,6 +9,14 @@ function Device(name, x, y, width, height, imgPath) {
 	this.element = null;
 }
 
+Device.addDevice = function (DeviceClass, config) {
+	var device = new DeviceClass(config.x, config.y, config.width, config.height, config.img);
+	device.onToggle = config.onToggle;
+	device.render(config.container);
+	config.controller.registerDevice(device);
+	return device;
+};
+
 Device.prototype.render = function (parentElement) {
 	const el = document.createElement('div');
 	el.className = 'device';
@@ -33,9 +41,12 @@ Device.prototype.render = function (parentElement) {
 
 Device.prototype.toggle = function () {
 	this.state = this.state === 'on' ? 'off' : 'on';
+
 	if (typeof this.onToggle === 'function') {
 		this.onToggle(this);
 	}
-};
 
-Device.prototype.showEffect = function () { };
+	if (typeof this.showEffect === 'function') {
+		this.showEffect();
+	}
+};

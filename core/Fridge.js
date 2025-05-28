@@ -12,21 +12,22 @@ Fridge.prototype.render = function (parent) {
 };
 
 Fridge.prototype.showEffect = function () {
+	if (this.effect) {
+		this.effect.classList.remove('show');
+		var old = this.effect;
+		this.effect = null;
+		setTimeout(function () {
+			old.remove();
+		}, 400);
+	}
+
 	if (this.state === 'on') {
-		const snow = document.createElement('div');
+		var snow = document.createElement('div');
 		snow.className = 'effect-overlay';
 		snow.style.backgroundImage = 'url(effects/snow.gif)';
 		this.element.appendChild(snow);
 		void snow.offsetWidth;
 		snow.classList.add('show');
 		this.effect = snow;
-	} else {
-		if (this.effect) {
-			this.effect.classList.remove('show');
-			setTimeout(() => {
-				this.effect.remove();
-				this.effect = null;
-			}, 400);
-		}
 	}
 };

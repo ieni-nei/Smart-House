@@ -5,21 +5,22 @@ AC.prototype = Object.create(Device.prototype);
 AC.prototype.constructor = AC;
 
 AC.prototype.showEffect = function () {
+	if (this.effect) {
+		this.effect.classList.remove('wind');
+		var old = this.effect;
+		this.effect = null;
+		setTimeout(function () {
+			old.remove();
+		}, 400);
+	}
+
 	if (this.state === 'on') {
-		const wind = document.createElement('div');
-		wind.className = 'effect-overlay';
-		wind.style.backgroundImage = 'url(effects/wind.gif)';
-		this.element.appendChild(wind);
-		void wind.offsetWidth;
-		wind.classList.add('show');
-		this.effect = wind;
-	} else {
-		if (this.effect) {
-			this.effect.classList.remove('show');
-			setTimeout(() => {
-				this.effect.remove();
-				this.effect = null;
-			}, 400);
-		}
+		var snow = document.createElement('div');
+		snow.className = 'effect-overlay';
+		snow.style.backgroundImage = 'url(effects/wind.gif)';
+		this.element.appendChild(snow);
+		void snow.offsetWidth;
+		snow.classList.add('wind');
+		this.effect = snow;
 	}
 };

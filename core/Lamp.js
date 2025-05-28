@@ -11,23 +11,23 @@ Lamp.prototype.render = function (parent) {
 	}
 };
 
-
 Lamp.prototype.showEffect = function () {
+	if (this.effect) {
+		this.effect.classList.remove('light');
+		var old = this.effect;
+		this.effect = null;
+		setTimeout(function () {
+			old.remove();
+		}, 400);
+	}
+
 	if (this.state === 'on') {
-		const light = document.createElement('div');
-		light.className = 'effect-overlay';
-		light.style.backgroundImage = 'url(effects/light.gif)';
-		this.element.appendChild(light);
-		void light.offsetWidth;
-		light.classList.add('show');
-		this.effect = light;
-	} else {
-		if (this.effect) {
-			this.effect.classList.remove('show');
-			setTimeout(() => {
-				this.effect.remove();
-				this.effect = null;
-			}, 400);
-		}
+		var snow = document.createElement('div');
+		snow.className = 'effect-overlay';
+		snow.style.backgroundImage = 'url(effects/light.gif)';
+		this.element.appendChild(snow);
+		void snow.offsetWidth;
+		snow.classList.add('light');
+		this.effect = snow;
 	}
 };

@@ -1,8 +1,8 @@
 function SmartHouseController() {
 	this.devices = [];
 	this.temp = 22;
-	this.energy = 4;
-	this.light = 40;
+	this.energy = 0;
+	this.light = 20;
 	this.intervalId = null;
 }
 

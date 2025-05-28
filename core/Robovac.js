@@ -66,7 +66,7 @@ Robovac.prototype.moveAround = function () {
 				robovac.element.style.transition = 'left 2s linear, top 2s linear';
 				robovac.element.style.left = pos.left + 'px';
 				robovac.element.style.top = pos.top + 'px';
-				setTimeout(tryMove, 2000);
+				setTimeout(tryMove, 3000);
 			} else {
 				attempt++;
 				tryPosition();
