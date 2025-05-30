@@ -15,12 +15,12 @@ AC.prototype.showEffect = function () {
 	}
 
 	if (this.state === 'on') {
-		var snow = document.createElement('div');
-		snow.className = 'effect-overlay';
-		snow.style.backgroundImage = 'url(effects/wind.gif)';
-		this.element.appendChild(snow);
-		void snow.offsetWidth;
-		snow.classList.add('wind');
-		this.effect = snow;
+		var wind = document.createElement('div');
+		wind.className = 'effect-overlay';
+		wind.style.backgroundImage = 'url(effects/wind.gif)';
+		this.element.appendChild(wind);
+		void wind.offsetWidth;
+		wind.classList.add('wind');
+		this.effect = wind;
 	}
 };

@@ -50,3 +50,5 @@ Device.prototype.toggle = function () {
 		this.showEffect();
 	}
 };
+
+Device.prototype.showEffect = function () { };

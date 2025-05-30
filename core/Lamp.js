@@ -22,12 +22,12 @@ Lamp.prototype.showEffect = function () {
 	}
 
 	if (this.state === 'on') {
-		var snow = document.createElement('div');
-		snow.className = 'effect-overlay';
-		snow.style.backgroundImage = 'url(effects/light.gif)';
-		this.element.appendChild(snow);
-		void snow.offsetWidth;
-		snow.classList.add('light');
-		this.effect = snow;
+		var light = document.createElement('div');
+		light.className = 'effect-overlay';
+		light.style.backgroundImage = 'url(effects/light.gif)';
+		this.element.appendChild(light);
+		void light.offsetWidth;
+		light.classList.add('light');
+		this.effect = light;
 	}
 };

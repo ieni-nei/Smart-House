@@ -72,7 +72,7 @@ window.onload = function () {
 		y: 70,
 		width: 100,
 		height: 100,
-		img: 'furniture/Robovac.png',
+		img: 'furniture/robovac.png',
 		container: house,
 		controller: controller,
 		onToggle: function (dev) {

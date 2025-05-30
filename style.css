@@ -116,12 +116,9 @@ body
 {
 	position: absolute;
 	transition: left 1s linear, top 1s linear;
-	width: 60px;
-	height: 60px;
 	padding: 5px;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: contain;
 	cursor: pointer;
 	user-select: none;
 	z-index: var(--z-device);
